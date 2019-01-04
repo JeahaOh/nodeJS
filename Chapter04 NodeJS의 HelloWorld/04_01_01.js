@@ -21,3 +21,5 @@ server.listen(port, (err) => {
     }
     console.log('Server Running');
 });
+
+//  node.js server 종료 방법 = console or teminal에서  ^(ctl) + c
