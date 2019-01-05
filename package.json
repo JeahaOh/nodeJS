@@ -1,0 +1,23 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "node.js studies 웹 서비스를 만들며 배우는 node.js 프로그래밍 (설치에서 배포까지) - 정민석(Jpub) 따라하기",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeahaOh/nodeJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeahaOh/nodeJS/issues"
+  },
+  "homepage": "https://github.com/JeahaOh/nodeJS#readme",
+  "dependencies": {
+    "qs": "^6.6.0",
+    "server": "^1.0.18"
+  }
+}
