@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/JeahaOh/nodeJS#readme",
   "dependencies": {
+    "cluster": "^0.7.7",
+    "net": "^1.0.2",
     "qs": "^6.6.0",
     "server": "^1.0.18"
   }
