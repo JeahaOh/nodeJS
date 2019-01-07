@@ -40,4 +40,6 @@ result:  OkPacket {
   message: '(Rows matched: 1  Changed: 1  Warnings: 0',
   protocol41: true,
   changedRows: 1 }
+
+changedRows     :   변경된 열의 갯수
  */
