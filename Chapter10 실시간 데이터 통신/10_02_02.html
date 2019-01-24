@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+            crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+    var CallLongPoll = () => {
+        $.ajax({
+            type : 'post',
+            url : '/longpolling',
+            success : ( data ) => {
+                console.log( "END" ) ;
+            }
+        });
+    };
+
+    CallLongPoll();
+    /**
+        접속이 끝나면서 데이터가 오면 다시 접속하는 방식임.
+    */ 
+</script>
+</html>
