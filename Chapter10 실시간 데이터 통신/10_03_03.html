@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery/min/ja"></script>
+    
+</head>
+<body>
+    <textarea style="background-color: #ccc; height: 400px; width: 400px; overflow: hidden;" readonly="true"></textarea>
+    <br>
+    <form>
+        <input style="width: 400px;" type="" id="inputbox">
+    </form>
+    <script>
+        var socket = io.connect('http://localhost:3000/chat');
+
+        socket.on('connect', () => {
+            console.log('connect');
+        })
+        .on('disconnect', () => {
+            console.log('disconnect');
+        })
+
+        .on('msg', ( data ) => {
+            $('textarea')
+            .val( $('textarea').val() + "\n" + data )
+            .scrollTop( $('textarea'[0]).scrollHeight );
+        });
+        /**
+            서버에서 msg라는 이벤트가 메세지로 오면 textarea에 받은 메세지를 출력.
+            submit하면 분당을 서버로 보냄.
+        */
+
+        $('form').submit( () => {
+            socket.emit( 'msg', $('form input').val() );
+            $('form input').val('');
+            return false;
+        });
+    </script>
+</body>
+</html>
