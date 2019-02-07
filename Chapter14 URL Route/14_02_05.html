@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <title>POST와 GET구분해서 받기</title>
+</head>
+<body>
+    <form method="post" action="http://localhost:8888/" target="_target"
+    enctype="multipart/form-data">
+    <!-- enctype="multipart/form-data"
+        파일을 전송하기 위한 규약.
+     -->
+        <input type="file" name="fileToUpload" id="fileToUpload"><br>
+        <input name="test">
+        <button type="submit">POST</button>
+    </form>
+    <form method="get" action="http://localhost:8888/" target="_target">
+        <input name="test">
+        <button type="submit">GET</button>
+    </form>
+</body>
+</html>
