@@ -1,6 +1,6 @@
 # Node.js Studies @opentutorials.org
 
-## Node.js?
+# 00. Node.js?
 HTML 문법에 따라  
 WEB Browser 위에서 돌아가는  
 WEB Application을 만드는 것 처럼.
@@ -36,3 +36,14 @@ Apache 처럼 WEB Server 처럼 쓸 수 있음.
   
 이런 특성으로 Node.js는 Apache에서 할 수 없는 기능들을 할 수 있음.  
 - http://opentutorials.org/module/3549/21032
+
+# 02 JavaScript - Data Type - Number
+숫자를 JavaScript로 표현하는 방법을 알아보자.  
+또, 계산할때 사용하는 산술 연산자를 알아보자.  
+  
+
+## 컴퓨터를 사용하는 이유 = 데이터를 어떻게 처리할 것인가?
+어떠한 데이터가 있는가?  
+각가의 데이터는 어떻게 처리 하는가?  
+Number, String, Boolean, Array, Object ...  
+이 중에 Number를 알아보자.
