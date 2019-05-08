@@ -40,10 +40,12 @@ Apache 처럼 WEB Server 처럼 쓸 수 있음.
 # 02 JavaScript - Data Type - Number
 숫자를 JavaScript로 표현하는 방법을 알아보자.  
 또, 계산할때 사용하는 산술 연산자를 알아보자.  
-  
 
 ## 컴퓨터를 사용하는 이유 = 데이터를 어떻게 처리할 것인가?
 어떠한 데이터가 있는가?  
 각가의 데이터는 어떻게 처리 하는가?  
 Number, String, Boolean, Array, Object ...  
 이 중에 Number를 알아보자.
+
+# 03 JavaScript - Data Type - String
+JavaScript에서 문자열을 표현하고 처리하는 방법에 대해서 알아 보자.

@@ -1,0 +1,5 @@
+console.log( 1 + 1 );
+console.log( '1' + '1');
+console.log(
+    `How far out have i got to move? Oh i've got to get next to you but you're so far away searching for a heart another world away you're all i need and now if you knew i can't operate without you No i can't never live another day fall into the floor you're my heart attack heart attack, heart attack baby lines on your face tells a story that burns you bad could you go there again? and although i'm longing for your embrace it's still a feeling that i wish i could end now i feel like i'm crazy how far out have i got to move? oh i've got to get next to you but you're so far away searching for a heart another world away you're all i need and now if you knew i can't operate without you No i can't never live another day fall into the floor you're my heart attack heart attack, heart attack, heart attack baby you're my heart attack heart attack, heart attack, heart attack baby you're my heart attack`
+    .length );
