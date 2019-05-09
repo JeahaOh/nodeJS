@@ -49,3 +49,7 @@ Number, String, Boolean, Array, Object ...
 
 # 03 JavaScript - Data Type - String
 JavaScript에서 문자열을 표현하고 처리하는 방법에 대해서 알아 보자.
+
+# 04 JavaScript - Variable (변수)
+데이터에 이름을 붙이는 수단인 변수에 대해서 알아보자,  
+또한 좋은 코드를 만들기 위한 방법인 중복복의 제거라는 원칙을 알아보자.
