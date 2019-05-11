@@ -56,3 +56,21 @@ JavaScript에서 문자열을 표현하고 처리하는 방법에 대해서 알�
 
 # 05 JavaScript - Template Literal
 여러줄로 이루어진 문자열의 표현과 문자의 치환을 쉽게 할 수 있는 기능을 제공함.
+
+# 06 Node.js - URL로 입력된 값 사용하기
+URL에 포함된 query string을 해석해서 이용하는 방법을 알아보자.
+
+## URL의 이해
+- `http://opentutorials.org:3000/main?id=HTML&page=12`
+    - http : protocol (통신 규칙)
+    - `opentutorials.org` : host (domain)
+    - 3000 : port
+    - main : path
+    - ? : query string의 시작
+    - id=HTML&page=12 : query string
+
+## Node.js에서 URL을 통해서 입력된 값을 사용하는 방법.
+Query String에 따라서 다른 정보를 보여주는 방법.
+
+- main.js (Node.js Application)에서 Query String의 값을 알아내는 방법.
+    - Node.js url parse query string
