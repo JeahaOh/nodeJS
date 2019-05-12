@@ -74,3 +74,6 @@ Query String에 따라서 다른 정보를 보여주는 방법.
 
 - main.js (Node.js Application)에서 Query String의 값을 알아내는 방법.
     - Node.js url parse query string
+
+# 07 App - 동적인 웹 페이지 만들기
+동적인 웹 페이지를 생성하는 방법을 알아보자.
