@@ -96,3 +96,6 @@ Node.js에서 파일을 읽는 방법을 알아보자.
 파일에 본문을 저장하고,  
 Node.js의 파일 읽기 기능(fs.readFile)을  
 이용해서 본문을 생성하는 방법을 알아 보자.
+
+# 10 JavaScript - Boolean
+참과 거짓을 나타내는 데이터 타입인 Boolean을 알아보자.
