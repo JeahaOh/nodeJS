@@ -137,3 +137,6 @@ undefined는 그냥 값이 없는 상태이기때문에,
 # 12 JavaScript - Flow Control Statement (제어문)
 프로그램의 의미를 음미해 보면서,
 보다 똑똑한 프로그램을 만들기 위한 테크닉으로서 제어문의 필요성을 생각 해 보자.
+
+# 13 JavaScript - Conditional Statement (조건문)
+조건에 따라서 코드의 실행 흐름을 바꿀 수 있게 해주는 조건문을 알아 보자.
