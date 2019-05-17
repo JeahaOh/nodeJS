@@ -140,3 +140,9 @@ undefined는 그냥 값이 없는 상태이기때문에,
 
 # 13 JavaScript - Conditional Statement (조건문)
 조건에 따라서 코드의 실행 흐름을 바꿀 수 있게 해주는 조건문을 알아 보자.
+
+# 14 Node.js - 콘솔에서의 입력값
+콘솔 환경에서 앱을 실행할 때 입력값을 전달하는 방법을 알아 보자.
+
+- 검색 키워드
+  - node.js console input parameters 
