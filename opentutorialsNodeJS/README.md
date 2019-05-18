@@ -146,3 +146,7 @@ undefined는 그냥 값이 없는 상태이기때문에,
 
 - 검색 키워드
   - node.js console input parameters 
+
+# 14 App - Not Found 오류 구현
+존재하지 않는 정보에 대한 요청이 들어왔을 때,  
+Not Found 오류 메세지를 전송하는 방법을 알아 보자.
