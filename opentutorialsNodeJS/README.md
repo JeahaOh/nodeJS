@@ -154,3 +154,7 @@ Not Found 오류 메세지를 전송하는 방법을 알아 보자.
 # 16 App - 홈페이지 구현
 조건문을 활용해서 홈페이지를 표현하는 방법을 살펴 보자.
 
+# 17 JavaScript - 반복문
+JavaScript의 반복문의 형식을 알아보자.  
+while 외에도 for, forEach, do while과 같은 반복문을 알아보자.
+
