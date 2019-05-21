@@ -158,3 +158,6 @@ Not Found 오류 메세지를 전송하는 방법을 알아 보자.
 JavaScript의 반복문의 형식을 알아보자.  
 while 외에도 for, forEach, do while과 같은 반복문을 알아보자.
 
+# 18 JavaScript - Data Type - Array (배열)
+JavaScript에서 서로 연관된 데이터를 정리하는 도구인 배열 (Array)의 형식을 알아 보자.
+
