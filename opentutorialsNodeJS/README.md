@@ -161,3 +161,8 @@ while 외에도 for, forEach, do while과 같은 반복문을 알아보자.
 # 18 JavaScript - Data Type - Array (배열)
 JavaScript에서 서로 연관된 데이터를 정리하는 도구인 배열 (Array)의 형식을 알아 보자.
 
+# 19 JavaScript - Array & Loop (배열과 반복문)
+배열은 복수의 데이터를 보관하는 그릇임.  
+반복문은 복수의 반복되는 작업을 처리하는 도구임.  
+배열과 반복문은 서로 밀접한 관계에 있는 도구임.
+
