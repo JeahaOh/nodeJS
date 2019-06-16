@@ -173,3 +173,5 @@ Node.js에서,
 - 검색 키워드
     - nodejs file lit in directory
 
+# 21 App - 글목록 출력하기
+data 디렉토리에 있는 파일의 이름을 이용해서 글 목록을 생성하는 기능을 구현해보도록 하자.
