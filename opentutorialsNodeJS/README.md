@@ -232,3 +232,7 @@ pm2 log
 pm2 start main.js --watch --ignore-watch="data/*"
 ```
 
+# 28 HTML - Form
+웹 브라우져에서 서버로 데이터를 전송할 때 사용하는 기능이 form임.  
+HTML로 form을 만드는 방법을 알아보자.  
+
