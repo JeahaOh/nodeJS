@@ -13,6 +13,7 @@ function templateHTML( title, list, body ) {
     <body>
         <h1><a href="/">WEB</a></h1>
         ${list}
+        <a href="/create">Create</a>
         ${body}
     </body>
     </html>
@@ -35,9 +36,10 @@ var app = http.createServer( function( request, response ) {
     var queryData = url.parse( _url, true ).query;
     var pathname = url.parse( _url, true ).pathname;
 
+    // console.log( pathname );
+
     if( pathname === '/' ){
         if( queryData.id === undefined ) {
-
             fs.readdir('./data', function( err, fileList ) {
                 var title = 'Welcome';
                 var description = 'Hello, Node.js';
@@ -57,6 +59,24 @@ var app = http.createServer( function( request, response ) {
                 });
             });
         }
+    }   else if( pathname === '/create') {
+        fs.readdir('./data', function( err, fileList ) {
+            var title = 'WEB - create';
+            var list = templateList( fileList );
+            var template = templateHTML( title, list, `
+            <form action="http://localhost:3000/process_create" method="POST">
+                <p><input type="text" name="title" placeholder="TITLE"></p>
+                <p>
+                    <textarea name="description" placeholder="Description"></textarea>
+                </p>
+                <p>
+                    <input type="submit">
+                </p>
+            </form>
+            ` );
+            response.writeHead( 200 );
+            response.end( template );
+        });
     }   else {
         response.writeHead( 404 );
         response.end( 'Not Found' );

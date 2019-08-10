@@ -236,3 +236,6 @@ pm2 start main.js --watch --ignore-watch="data/*"
 웹 브라우져에서 서버로 데이터를 전송할 때 사용하는 기능이 form임.  
 HTML로 form을 만드는 방법을 알아보자.  
 
+# 29 App - 글생성 UI 만들기
+글 작성을 할 수 있는 UI를 구현해보자.
+
