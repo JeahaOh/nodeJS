@@ -1,6 +1,7 @@
 var http = require( 'http' );
 var fs = require( 'fs' );
 var url = require( 'url' );
+var qs = require( 'querystring' );
 
 function templateHTML( title, list, body ) {
     return `
@@ -64,7 +65,7 @@ var app = http.createServer( function( request, response ) {
             var title = 'WEB - create';
             var list = templateList( fileList );
             var template = templateHTML( title, list, `
-            <form action="http://localhost:3000/process_create" method="POST">
+            <form action="http://localhost:3000/create_process" method="POST">
                 <p><input type="text" name="title" placeholder="TITLE"></p>
                 <p>
                     <textarea name="description" placeholder="Description"></textarea>
@@ -77,6 +78,28 @@ var app = http.createServer( function( request, response ) {
             response.writeHead( 200 );
             response.end( template );
         });
+    }   else if( pathname === '/create_process') {
+        var body = '';
+        request.on( 'data', function( data ) {
+            body = body + data;
+            //  Post data가 많으면 연결을 끊음.
+            //  1e6 === 1 * Math.pow( 10, 6 ) === 1 * 1000000 ~~ 1 MB
+            if( body.length > 1e6 ){
+                request.connection.destroy();
+            }
+        });
+        request.on( 'end', function() {
+            var post = qs.parse( body );
+            // console.log( post );
+            // console.log( post.title );
+            // console.log( post.description );
+            var title = post.title;
+            var description = post.description;
+            
+        });
+
+        response.writeHead( 200 );
+        response.end( 'success' );
     }   else {
         response.writeHead( 404 );
         response.end( 'Not Found' );
