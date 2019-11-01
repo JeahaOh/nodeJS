@@ -37,8 +37,6 @@ var app = http.createServer( function( request, response ) {
     var queryData = url.parse( _url, true ).query;
     var pathname = url.parse( _url, true ).pathname;
 
-    // console.log( pathname );
-
     if( pathname === '/' ){
         if( queryData.id === undefined ) {
             fs.readdir('./data', function( err, fileList ) {
@@ -95,11 +93,13 @@ var app = http.createServer( function( request, response ) {
             // console.log( post.description );
             var title = post.title;
             var description = post.description;
-            
-        });
 
-        response.writeHead( 200 );
-        response.end( 'success' );
+            fs.writeFile( `data/${title}`, description, 'UTF8',
+            function( err ) {
+                response.writeHead( 302, { Location: `/?id=${title}` } );
+                response.end( 'success' );
+            });
+        });
     }   else {
         response.writeHead( 404 );
         response.end( 'Not Found' );

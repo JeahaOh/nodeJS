@@ -244,3 +244,11 @@ POST 방식으로 전송된 데이터를 받아서 파일로 전송하는 방법
 
 - 검색 키워드
     - nodejs post data
+
+# 31 App - 파일 생성과 리다이렉션
+전송된 POST 데이터를 받아서 파일에 저장하고,  
+그 결과를 리다이렉션하는 방법에 대해서 알아보자.
+
+- 검색 키워드
+    - nodejs file write
+    - nodejs redirection
