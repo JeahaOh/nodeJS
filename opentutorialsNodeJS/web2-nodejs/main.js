@@ -124,7 +124,26 @@ var app = http.createServer( function( request, response ) {
                 response.end( template );
             });
         });
-    }    else {
+    }   else if( pathname === '/update_process' ) {
+        var body = '';
+        request.on( 'data', function( data ) {
+            body = body + data;
+        });
+        request.on( 'end', function() {
+            var post = qs.parse( body );
+            var id = post.id;
+            var title = post.title;
+            var description = post.description;
+            console.log( post );
+            fs.rename( `data/${id}`, `data/${title}`, function( err ) {
+                fs.writeFile( `data/${title}`, description, 'UTF8',
+                function( err ) {
+                    response.writeHead( 302, { Location: `/?id=${title}` } );
+                    response.end( 'success' );
+                });
+            });
+        });
+    }   else {
         response.writeHead( 404 );
         response.end( 'Not Found' );
     }
