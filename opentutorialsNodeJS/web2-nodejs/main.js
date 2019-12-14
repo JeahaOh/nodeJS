@@ -55,8 +55,13 @@ var app = http.createServer( function( request, response ) {
                     var title = queryData.id;
                     var list = templateList( fileList );
                     var template = templateHTML( title, list,
-                         `<h2>${title}</h2> ${description}`,
-                         `<a href="/create">Create</a> <a href="/update?id=${title}">Update</a>` );
+                        `<h2>${title}</h2> ${description}`,
+                        `<a href="/create">Create</a>
+                         <a href="/update?id=${title}">Update</a>
+                         <form action="delete_process" method="post" onsubmit="REALLY??">
+                            <input type="hidden" name="id" value="${title}">
+                            <input type="submit" value="delete">
+                         </form>` );
                     response.writeHead( 200 );
                     response.end( template );
                 });
