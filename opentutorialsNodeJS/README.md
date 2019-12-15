@@ -278,3 +278,10 @@ pm2 start main.js --watch --ignore-watch="data/*"
 삭제 작업을 하기 위해서는 삭제 버튼이 있어야 함.  
 이 때, 링크를 사용하면 안됨.  
 링크 대신 form을 이용해서 삭제 버튼을 만드는 방법을 살펴 보도록 하자.
+
+# 35 App - 글 삭제 기능 완성
+글 삭제 기능을 완성해 보자.
+
+- 검색 키워드
+    - nodejs delete file
+    
