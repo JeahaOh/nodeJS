@@ -288,3 +288,6 @@ pm2 start main.js --watch --ignore-watch="data/*"
 # 37 JavaScript - 객체의 형식
 서로 연관된 데이커를 정리 정돈하는 도구인 객체의 형식을 살펴보도록 하자.
 
+# 38 JavaScript - 객체의 반복
+객체의 데이터를 하나씩 꺼내서 반복적인 처리를 하는 방법을 알아보자.
+
