@@ -3,33 +3,35 @@ var fs = require( 'fs' );
 var url = require( 'url' );
 var qs = require( 'querystring' );
 
-function templateHTML( title, list, body, control ) {
-    return `
-    <!DOCTYPE HTML>
-    <html>
-    <head>
-    <title>WEB1 - ${title}</title>
-    <meta charset="UTF-8">
-    </head>
-    <body>
-        <h1><a href="/">WEB</a></h1>
-        ${list}
-        ${control}
-        ${body}
-    </body>
-    </html>
-    `;
-}
-
-function templateList( fileList ) {
-    var list = '<ul>';
-    var i = 0;
-    while( i < fileList.length ) {
-        list = list + `<li><a href="/?id=${fileList[i]}">${fileList[i]}</a></li>`
-        i++;
+//  refactoring
+const template = {
+    HTML : function( title, list, body, control ) {
+        return `
+        <!DOCTYPE HTML>
+        <html>
+        <head>
+        <title>WEB1 - ${title}</title>
+        <meta charset="UTF-8">
+        </head>
+        <body>
+            <h1><a href="/">WEB</a></h1>
+            ${list}
+            ${control}
+            ${body}
+        </body>
+        </html>
+        `;
+    },
+    list : function( fileList ) {
+        var list = '<ul>';
+        var i = 0;
+        while( i < fileList.length ) {
+            list = list + `<li><a href="/?id=${fileList[i]}">${fileList[i]}</a></li>`
+            i++;
+        }
+        list = list + '</ul>';
+        return list;
     }
-    list = list + '</ul>';
-    return list;
 }
 
 var app = http.createServer( function( request, response ) {
@@ -42,19 +44,30 @@ var app = http.createServer( function( request, response ) {
             fs.readdir('./data', function( err, fileList ) {
                 var title = 'Welcome';
                 var description = 'Hello, Node.js';
+
+                /*
                 var list = templateList( fileList );
                 var template = templateHTML( title, list,
                     `<h2>${title}</h2> ${description}`,
                     `<a href="/create">Create</a>` );
                 response.writeHead( 200 );
                 response.end( template );
+                */
+
+                var list = template.list( fileList );
+                var html = template.HTML( title, list,
+                    `<h2>${title}</h2> ${description}`,
+                    `<a href="/create">Create</a>` );
+                response.writeHead( 200 );
+                response.end( html );
+                
             });
         }   else {
             fs.readdir('./data', function( err, fileList) {
                 fs.readFile( `data/${queryData.id}`, 'UTF-8', function( err, description ) {
                     var title = queryData.id;
-                    var list = templateList( fileList );
-                    var template = templateHTML( title, list,
+                    var list = template.list( fileList );
+                    var html = template.HTML( title, list,
                         `<h2>${title}</h2> ${description}`,
                         `<a href="/create">Create</a>
                          <a href="/update?id=${title}">Update</a>
@@ -63,15 +76,15 @@ var app = http.createServer( function( request, response ) {
                             <input type="submit" value="delete">
                          </form>` );
                     response.writeHead( 200 );
-                    response.end( template );
+                    response.end( html );
                 });
             });
         }
     }   else if( pathname === '/create') {
         fs.readdir('./data', function( err, fileList ) {
             var title = 'WEB - create';
-            var list = templateList( fileList );
-            var template = templateHTML( title, list, `
+            var list = template.list( fileList );
+            var html = template.HTML( title, list, `
             <form action="/create_process" method="POST">
                 <p><input type="text" name="title" placeholder="TITLE"></p>
                 <p>
@@ -83,7 +96,7 @@ var app = http.createServer( function( request, response ) {
             </form>
             `, '' );
             response.writeHead( 200 );
-            response.end( template );
+            response.end( html );
         });
     }   else if( pathname === '/create_process') {
         var body = '';
@@ -110,8 +123,8 @@ var app = http.createServer( function( request, response ) {
         fs.readdir('./data', function( err, fileList) {
             fs.readFile( `data/${queryData.id}`, 'UTF-8', function( err, description ) {
                 var title = queryData.id;
-                var list = templateList( fileList );
-                var template = templateHTML( title, list,
+                var list = template.list( fileList );
+                var html = template.HTML( title, list,
                     `
                     <form action="/update_process" method="POST">
                         <input type="hidden" name="id" value="${title}">
@@ -126,7 +139,7 @@ var app = http.createServer( function( request, response ) {
                     `,
                     `<a href="/create">Create</a> <a href="/update?id=${title}">Update</a>` );
                 response.writeHead( 200 );
-                response.end( template );
+                response.end( html );
             });
         });
     }   else if( pathname === '/update_process' ) {
@@ -139,7 +152,6 @@ var app = http.createServer( function( request, response ) {
             var id = post.id;
             var title = post.title;
             var description = post.description;
-            console.log( 'update -> ' + post );
             fs.rename( `data/${id}`, `data/${title}`, function( err ) {
                 fs.writeFile( `data/${title}`, description, 'UTF8',
                 function( err ) {
@@ -156,7 +168,6 @@ var app = http.createServer( function( request, response ) {
         request.on( 'end', function() {
             var post = qs.parse( body );
             var id = post.id;
-            console.log( 'delete -> ' + post );
             fs.unlink( `data/${id}`, function( err ) {
                 response.writeHead( 302, { Location: `/` } );
                     response.end( 'success' );
